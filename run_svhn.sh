@@ -1,4 +1,11 @@
 sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --method 'plain' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-sleep 3s; nohup python3.7 goodX.py --gpu 2 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --method 'OE' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-sleep 3s; nohup python3.7 goodX.py --gpu 3 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.8 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-sleep 3s; nohup python3.7 goodX.py --gpu 4 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 1.0 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --method 'CEDA' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --method 'OE' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --method 'plain' --autoaugment --acet 'ce' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.2 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.4 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.6 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.8 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.9 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 0.95 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'SVHN' --arch 'XL' --mode 'train' --pretrained 'SVHN_CEDA' --method 'GOOD' --good_quantile 1.0 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &

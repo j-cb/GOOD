@@ -1,5 +1,11 @@
-#sleep 5s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --base_lr 0.005 --epochs 420 --optimizer 'SGDM' --traincrop 4 --method 'plain'  > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-#sleep 5s; nohup python3.7 goodX.py --gpu 2 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --base_lr 0.005 --epochs 420 --optimizer 'SGDM' --traincrop 4 --method 'OE' --kappa 0.3 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-#sleep 5s; nohup python3.7 goodX.py --gpu 3 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --base_lr 0.005 --epochs 420 --optimizer 'SGDM' --traincrop 4 --method 'GOOD' --kappa 0.3  --eps 0.3 --good_quantile 0.8 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-#sleep 5s; nohup python3.7 goodX.py --gpu 4 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --base_lr 0.005 --epochs 420 --optimizer 'SGDM' --traincrop 4 --method 'GOOD' --kappa 0.3  --eps 0.3 --good_quantile 0.9 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
-sleep 5s; nohup python3.7 goodX.py --gpu 6 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --traincrop 4 --method 'GOOD' --eps 0.3 --good_quantile 1.0 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'plain' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'CEDA' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'OE' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'plain' --acet 'ce' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.2 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.4 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.6 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.8 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.9 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 0.95 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'MNIST' --arch 'L' --mode 'train' --method 'GOOD' --good_quantile 1.0 > logs/$(date +%Y-%m-%d_%H:%M:%S).log &

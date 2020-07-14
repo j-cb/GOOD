@@ -10,7 +10,7 @@
 
 ## Paper Summary
 
-![figure1.png](attachment:figure1.png)
+![figure1.png](readme_imgs/figure1.png)
 
 **Left:** On the in-distribution CIFAR-10 all methods have similar high confidence on the image of a *dog*. **Middle:** For the OOD image of a *chimpanzee* from CIFAR-100 the plain model is overconfident. **Right:** When maximizing the confidence inside the $l_\infty$-ball of radius $0.01$ around this image (for the OE model), also CCU and OE become overconfident. ACET and our GOOD\textsubscript{80} perform well in having empirical low confidence, but only GOOD\textsubscript{80} guarantees that the confidence in that $l_\infty$-ball around the middle image is less than 15.5\% for any class (note that $10\%$ corresponds to maximal uncertainty).
 
@@ -43,7 +43,7 @@ Since optimizing guarantees on samples where already the clean confidence is hig
 
 ### Experimental results
 
-![good_table1.png](attachment:good_table1.png)
+![good_table1.png](readme_imgs/good_table1.png)
 
 The OOD discrimination performance of GOOD and several baseline methods is shown in Table 1.
 <br>GOOD ...
