@@ -1,0 +1,1 @@
+tiny_path = '/home/jb/ML/data/80MTinyImages/tiny_images.bin'

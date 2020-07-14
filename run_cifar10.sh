@@ -1,0 +1,10 @@
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --method 'plain' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 6 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --method 'CEDA' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 6 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --method 'OE' --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 0 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --method 'plain' --autoaugment --acet 'ce' > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 7 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 0.8 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 5 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 0.9 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 3 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 1.0 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 4 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 1.0 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 5 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 1.0 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &
+sleep 3s; nohup python3.7 goodX.py --gpu 6 --dset_in_name 'CIFAR10' --arch 'XL' --mode 'train' --pretrained 'CIFAR10_CEDA' --method 'GOOD' --good_quantile 0.95 --autoaugment > logs/$(date +%Y-%m-%d_%H:%M:%S).log &

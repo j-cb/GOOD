@@ -1,0 +1,10 @@
+evals/*
+experiments/*
+logs/*
+models/*
+tb_logs/*
+eval_paths.py
+path_config.py
+_*
+.*
+!/.gitignore
