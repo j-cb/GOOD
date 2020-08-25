@@ -4,7 +4,9 @@
 
 **University of Tübingen**
 
-**[https://arxiv.org/abs/XXXX.XXXX](https://arxiv.org/abs/XXXX.XXXX)**
+**[https://arxiv.org/abs/2007.08473](https://arxiv.org/abs/2007.08473)**
+
+**Pre-trained CEDA models and this readme with properly rendered formulas: https://gitlab.com/Bitterwolf/GOOD**
 
 ---
 
