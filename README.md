@@ -31,17 +31,7 @@ In contrast to classifiers with certified adversarial robustness on the in-distr
 
 ### Provable confidence bound and loss calculation
 
-For an input x, the l<sub>&infin;</sub>-ball of radius $`\epsilon`$ is described by the upper and lower bounds $`\displaystyle\underline{z_0}_\epsilon=x-\epsilon`$ and $`\overline{z_0}^\epsilon=x+\epsilon`$.
-With [Interval Bound Propagation (IBP)](https://arxiv.org/abs/1810.12715), these bounds on individual pixels/neurons can be propagated through the neural network as $`\displaystyle\overline{z_k}^\epsilon = \max(W_k, 0) \cdot  \overline{z_{k-1}}^\epsilon + \min(W_k, 0)  \cdot \underline{z_{k-1}}_\epsilon + b_k`$ for the upper and $`\displaystyle\underline{z_k}_\epsilon = \min(W_k, 0) \cdot \overline{z_{k-1}}^\epsilon + \max(W_k, 0) \cdot \underline{z_{k-1}}_\epsilon +b_k`$ for the lower bound on the next layer.
-Eventually, we arrive at an upper bound  $`\displaystyle\overline{f_k(x) - f_l(x)}^\epsilon`$ on the difference between the logits of any two classes $`k,l`$, which means $`\displaystyle\max_{\left\lVert\hat{x}-x\right\rVert_\infty \leq \epsilon} f_k(\hat{x}) - f_l(\hat{x}) \leq \overline{f_k(x) - f_l(x)}^\epsilon`$.
-This translates into an upper bound on the confidence as $`\displaystyle\max_{\left\lVert\hat{x}-x\right\rVert_\infty \leq \epsilon} \log  \max_{k=1,\ldots,K}p(\hat{x}) \leq \max_{k=1,\ldots,K} -\log\sum_{l=1}^K e^{-(\overline{f_k(x) - f_l(x)}^\epsilon)}`$.
-In order to get stable training, GOOD does not minimize this upper bound directly, but uses the loss
-$`\mathcal{L}_{\text{CUB}}(x; \epsilon) = \log \left( \frac{\Big(\max\limits_{k,l=1,\ldots,K} \overline{f_k(x) - f_l(x)}^\epsilon\Big)^2}{2} + 1 \right)`$.
- 
-Since optimizing guarantees on samples where already the clean confidence is high can be very detrimental, **Quantile GOOD** uses point prediction for inputs which would otherwise receive the worst guarantees. Its complete training objective is the minimization of
- $`\displaystyle \frac{1}{N} \sum_{i = 1}^{N} \mathcal{L}_{\text{CE}}(x_i^{\text{IN}},y_i^{\text{IN}}) 
-    +  \frac{\kappa}{M} \sum_{j = 1}^{\lfloor q \cdot M \rfloor} \mathcal{L}_{\text{CUB}}(x_{\pi_j}^{\text{OUT}}; \epsilon)
-    +  \frac{\kappa}{M} \sum_{j = \lfloor q \cdot M \rfloor + 1}^{M} \mathcal{L}_{\text{CUB}}(x_{\pi_j}^{\text{OUT}}; 0)`$.
+![gitlab_method.png](readme_imgs/gitlab_method.png)
 
 ### Experimental results
 
