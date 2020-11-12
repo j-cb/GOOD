@@ -1,4 +1,4 @@
-# [Provable Worst Case Guarantees for the Detection of Out-of-Distribution Data](https://arxiv.org/abs/2007.08473)
+# [Certifiably Adversarially Robust Detection of Out-of-Distribution Data](https://arxiv.org/abs/2007.08473)
 
 **Julian Bitterwolf, Alexander Meinke and Matthias Hein**
 
