@@ -1,0 +1,17 @@
+evals/*
+experiments/*
+logs/*
+tb_logs/*
+#eval_paths.py
+path_config.py
+!/.gitignore
+!*/.gitkeep
+pymp*
+#dataloading.py
+#*.sh
+.ipynb_checkpoints/
+__pycache__/
+readme_imgs/.ipynb_checkpoints/
+tiny_utils/.ipynb_checkpoints/
+tiny_utils/__pycache__/
+models/*

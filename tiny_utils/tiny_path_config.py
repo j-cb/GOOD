@@ -1,0 +1,1 @@
+tiny_path = '/home/scratch/datasets/80M Tiny Images/tiny_images.bin'
