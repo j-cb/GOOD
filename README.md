@@ -6,13 +6,15 @@
 
 **[https://arxiv.org/abs/2007.08473](https://arxiv.org/abs/2007.08473)**
 
+Pretrained models available at **[https://gitlab.com/Bitterwolf/GOOD](https://gitlab.com/Bitterwolf/GOOD)**
+
 ---
 
 ## Paper Summary
 
 ![figure1.png](readme_imgs/figure1.png)
 
-**Left:** On the in-distribution CIFAR-10 all methods have similar high confidence on the image of a *dog*. **Middle:** For the OOD image of a *chimpanzee* from CIFAR-100 the plain model is overconfident. **Right:** When maximizing the confidence inside the $`l_\infty`$-ball of radius $`0.01`$ around this image (for the OE model), also CCU and OE become overconfident. ACET and our GOOD<sub>80</sub> perform well in having empirical low confidence, but only GOOD<sub>80</sub> guarantees that the confidence in the  $`l_\infty`$-ball of radius  $`0.01`$ around the *chimpanzee* image (middle image) is less than 22.7\% for any class (note that 10\% corresponds to maximal uncertainty as CIFAR-10 has 10 classes).
+**Left:** On the in-distribution CIFAR-10 all methods have similar high confidence on the image of a *dog*. **Middle:** For the OOD image of a *chimpanzee* from CIFAR-100 the plain model is overconfident. **Right:** When maximizing the confidence inside the l<sub>&infin;</sub>-ball of radius 0.01 around this image (for the OE model), also CCU and OE become overconfident. ACET and our GOOD<sub>80</sub> perform well in having empirical low confidence, but only GOOD<sub>80</sub> guarantees that the confidence in the  l<sub>&infin;</sub>-ball of radius  0.01 around the *chimpanzee* image (middle image) is less than 22.7\% for any class (note that 10\% corresponds to maximal uncertainty as CIFAR-10 has 10 classes).
 
 ### The idea behind provably robust OOD detection
 
@@ -23,13 +25,13 @@ Deep neural networks are also notoriously susceptible to small adversarial pertu
 
 The Guaranteed Out-Of-distribution Detection (GOOD) training scheme allows to provide worst-case low confidence guarantees within the neighborhood of an input not only for far away OOD inputs like noise, but also for images from image datasets that are related to the classifier's in-distribution.
 
-Techniques from interval bound propagation allow to derive a provable upper bound on the maximal confidence of the classifier in an $`l_\infty`$-ball of radius $`\epsilon`$ around a given point. By minimizing this bound on the out-distribution, we arrive at the first models which have guaranteed low confidence even on image datasets related to the original one; e.g., we get state-of-the-art results on separating letters from EMNIST from digits in MNIST even though the digit classifier has never seen any images of letters at training time. In particular, the guarantees for the training out-distribution generalize to other out-distribution datasets.
+Techniques from interval bound propagation allow to derive a provable upper bound on the maximal confidence of the classifier in an l<sub>&infin;</sub>-ball of radius &epsilon; around a given point. By minimizing this bound on the out-distribution, we arrive at the first models which have guaranteed low confidence even on image datasets related to the original one; e.g., we get state-of-the-art results on separating letters from EMNIST from digits in MNIST even though the digit classifier has never seen any images of letters at training time. In particular, the guarantees for the training out-distribution generalize to other out-distribution datasets.
 
 In contrast to classifiers with certified adversarial robustness on the in-distribution, GOOD has the desirable property to achieve provable guarantees for OOD detection with almost no loss in accuracy on the in-distribution task.
 
 ### Provable confidence bound and loss calculation
 
-For an input $`x`$, the $`l_\infty`$-ball of radius $`\epsilon`$ is described by the upper and lower bounds $`\displaystyle\underline{z_0}_\epsilon=x-\epsilon`$ and $`\overline{z_0}^\epsilon=x+\epsilon`$.
+For an input x, the l<sub>&infin;</sub>-ball of radius $`\epsilon`$ is described by the upper and lower bounds $`\displaystyle\underline{z_0}_\epsilon=x-\epsilon`$ and $`\overline{z_0}^\epsilon=x+\epsilon`$.
 With [Interval Bound Propagation (IBP)](https://arxiv.org/abs/1810.12715), these bounds on individual pixels/neurons can be propagated through the neural network as $`\displaystyle\overline{z_k}^\epsilon = \max(W_k, 0) \cdot  \overline{z_{k-1}}^\epsilon + \min(W_k, 0)  \cdot \underline{z_{k-1}}_\epsilon + b_k`$ for the upper and $`\displaystyle\underline{z_k}_\epsilon = \min(W_k, 0) \cdot \overline{z_{k-1}}^\epsilon + \max(W_k, 0) \cdot \underline{z_{k-1}}_\epsilon +b_k`$ for the lower bound on the next layer.
 Eventually, we arrive at an upper bound  $`\displaystyle\overline{f_k(x) - f_l(x)}^\epsilon`$ on the difference between the logits of any two classes $`k,l`$, which means $`\displaystyle\max_{\left\lVert\hat{x}-x\right\rVert_\infty \leq \epsilon} f_k(\hat{x}) - f_l(\hat{x}) \leq \overline{f_k(x) - f_l(x)}^\epsilon`$.
 This translates into an upper bound on the confidence as $`\displaystyle\max_{\left\lVert\hat{x}-x\right\rVert_\infty \leq \epsilon} \log  \max_{k=1,\ldots,K}p(\hat{x}) \leq \max_{k=1,\ldots,K} -\log\sum_{l=1}^K e^{-(\overline{f_k(x) - f_l(x)}^\epsilon)}`$.
