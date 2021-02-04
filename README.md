@@ -6,14 +6,6 @@
 
 **[https://arxiv.org/abs/2007.08473](https://arxiv.org/abs/2007.08473)**
 
-Pretrained models available at **[https://gitlab.com/Bitterwolf/GOOD](https://gitlab.com/Bitterwolf/GOOD)**
-
----
-
-## Pre-trained models
-
-The parameters of all evaluated models are available as PyTorch state dicts at https://nc.mlcloud.uni-tuebingen.de/index.php/s/sLzL24L6dD8YwGD
-
 ---
 
 ## Paper Summary
@@ -73,3 +65,12 @@ The training progress is monitored with tensorboard, which can be viewed in the 
 
 The trained models together with some extra data like example training images get saved in the experiments folder.
 To evaluate models, enter their path in `eval_paths.py` and run `goodX.py --mode 'eval'`. Evaluation settings for values as in Table 1 are prepared in the `eval_dataset.sh` scripts.
+
+---
+
+## Pre-trained models
+
+The parameters of all evaluated models are available as PyTorch state dicts at https://nc.mlcloud.uni-tuebingen.de/index.php/s/sLzL24L6dD8YwGD
+
+The CEDA models used in experiments with pre-training can be found at **[https://gitlab.com/Bitterwolf/GOOD](https://gitlab.com/Bitterwolf/GOOD)**
+
