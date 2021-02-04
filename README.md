@@ -10,6 +10,12 @@ Pretrained models available at **[https://gitlab.com/Bitterwolf/GOOD](https://gi
 
 ---
 
+## Pre-trained models
+
+The parameters of all evaluated models are available as PyTorch state dicts at https://nc.mlcloud.uni-tuebingen.de/index.php/s/sLzL24L6dD8YwGD
+
+---
+
 ## Paper Summary
 
 ![figure1.png](readme_imgs/figure1.png)
